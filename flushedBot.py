@@ -23,7 +23,7 @@ async def on_message(message):
     cond1 = 'i\'m in ' in message.content.lower()
     cond2 = 'i am in ' in message.content.lower()
     cond3 = 'im in ' in message.content.lower()
-    output = message.content
+    output = message.content.lower()
     
     flushed = False
     
@@ -56,7 +56,7 @@ async def on_message(message):
     if flushed:
     
         channel = message.channel
-        await channel.send(f'i\'m {output} :flushed:')
+        await channel.send(f'i\'m {output.lower()} :flushed::flushed:')
 
 client.run(token)
 
